@@ -28,7 +28,7 @@ function App() {
 
   const loadContacts = async () => {
     try {
-      const response = await fetch('http://localhost:3000/contacts')
+      const response = await fetch('https://smartcall-backend-a50w.onrender.com')
 
       if (!response.ok) {
         throw new Error('Failed to load contacts')
@@ -51,7 +51,7 @@ function App() {
     event.preventDefault()
 
     try {
-      const response = await fetch('http://localhost:3000/users/login', {
+      const response = await fetch('https://smartcall-backend-a50w.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ function App() {
 
     try {
       const response = await fetch(
-        'http://localhost:3000/contacts/upload',
+        'https://smartcall-backend-a50w.onrender.com',
         {
           method: 'POST',
           body: formData,
