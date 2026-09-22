@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
@@ -13,7 +12,7 @@ import { ContactsModule } from './contacts/contacts.module';
       host: process.env.DB_HOST || 'localhost',
       port: Number(process.env.DB_PORT) || 5432,
       username: process.env.DB_USERNAME || 'postgres',
-      password: 'Muskan@07',
+      password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME || 'smartcall_ai',
       autoLoadEntities: true,
       synchronize: true,
@@ -25,3 +24,4 @@ import { ContactsModule } from './contacts/contacts.module';
   providers: [AppService],
 })
 export class AppModule {}
+
